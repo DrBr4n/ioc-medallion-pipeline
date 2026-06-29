@@ -1,0 +1,17 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Python (pip) dependencies
+# ─────────────────────────────────────────────────────────────────────────────
+pyspark==3.5.1        # Spark engine + PySpark API (medallion pipeline runtime)
+mypy>=1.8             # static type checking (the codebase is fully annotated)
+ 
+# ─────────────────────────────────────────────────────────────────────────────
+# JVM dependencies — NOT installed by pip.
+# Spark fetches these jars at runtime via `spark.jars.packages`, configured in
+# pipeline/lakehouse.py (get_spark). Listed here for visibility / version pinning.
+# First run needs network access to download them.
+#
+#   org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.6.1   # Iceberg tables + MERGE
+#   org.xerial:sqlite-jdbc:3.46.1.0                           # SQLite catalog driver
+#
+# Requires a JDK (Java 17) on PATH for Spark.
+# ─────────────────────────────────────────────────────────────────────────────
