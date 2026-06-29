@@ -10,7 +10,7 @@ into Apache Iceberg tables. The code is fully type-annotated and passes `mypy`.
 
 ## 1. Architecture
 
-![Architecture](diagrams/architecture.svg)
+![Architecture](diagrams/architecture.png)
 
 A self-hosted lakehouse built from open-source components - no SaaS - so
 the IOC owns its data end to end. Every layer is swappable and reads open file
@@ -52,7 +52,7 @@ formats, so nothing is trapped in a proprietary system.
 
 ## 2. Star schema & SCD specification
 
-![Star schema](diagrams/star_schema.svg)
+![Star schema](diagrams/star_schema.png)
 
 The fact grain is **one athlete competing in one event at one Games**. SCD type
 is specified per column below. (SCD 0 = retain/immutable, SCD 1 = overwrite in
